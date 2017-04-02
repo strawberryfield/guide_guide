@@ -18,12 +18,16 @@ Utilizzeremo ``Git`` che ci facilita l'integrazione con un `sito per la condivis
 e la pubblicazione dei
 nostri lavori come vedremo nel :ref:`prossimo capitolo <github>`.
 
+.. _git-setup:
+
 Installare Git
 ==============
 
 L'installer del programma per Windows può essere `scaricato dal sito di Git <https://git-scm.com/download/win>`_ 
 
 L'installer propone diversi pannelli con delle opzioni: per l'uso normale quelle di default vanno benissimo.
+
+.. _git-repository-create:
 
 Creare un repository
 ====================
@@ -45,4 +49,51 @@ Questo è il file presente in questo progetto:
 .. literalinclude:: .gitignore
     :caption: .gitignore
     :name: rest-code-gitignore
+
+Attivare il repository
+----------------------
+
+Clicchiamo con il tasto destro del mouse sulla cartella contenente il nostro progetto e dal menù 
+che appare selezioniamo ``Git GUI here``
+
+.. image:: images/git/new_repository.jpg
+
+Dalla finestra riportata sopra selezioniamo ``Create New Repository`` 
+
+.. image:: images/git/repository_dir.jpg
+
+Indichiamo la cartella del nostro progetto (possiamo anche selezionarla con il pulsante ``Browse``) 
+e quindi clicchiamo su ``Create``.
+
+Il primo commit
+---------------
+
+Il sistema ci presenterà questa nuova formati
+
+.. image:: images/git/first_commit.jpg
+
+nella quale elencherà i files presenti nella nostra cartella permettendoci di inserirli nel repository.
+
+Avendo già impostato le esclusioni possiamo inserirli tutti cliccando sul pulsante ``Stage changed``. 
+I files passeranno nel box sotto:
+
+.. image:: images/git/staged.jpg
+
+Per completare l'operazione di inserimento descriviamo i cambiamenti fatti nel box in basso a destra; 
+essendo questo il primo commit scriviamolo come nell'esempio.
+
+Non ci resta che premere il pulsante ``Commit`` ed il gioco è fatto.
+
+Molto probabilmente vi apparirà questa segnalazione:
+
+.. image:: images/git/cr_warning.jpg
+
+che possiamo tranquillamente ignorare cliccando su ``Continue`` (è dovuta alla diversa gestione del 
+*fine riga* tra le macchine Windows e Unix: Git utilizza il metodo di quest'ultimo e ci segnala che 
+effettua una conversione per noi totalmente ininfluente)
+
+Utilizzare il repository
+========================
+
+
  
