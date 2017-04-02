@@ -4,6 +4,8 @@
 Download sorgenti e binari
 **************************
 
+.. _downloads-bin:
+
 Versioni compilate
 ==================
 
@@ -12,6 +14,8 @@ Versioni compilate
 `oppure potete scaricare il pdf <https://strawberryfield.github.io/guide_guide/bin/guide_guide.pdf>`_,
 
 `o l'e-book <https://strawberryfield.github.io/guide_guide/bin/MSTSORTerrainGuide.epub>`_.
+
+.. _downloads-src:
 
 Sorgenti
 ========
