@@ -78,22 +78,41 @@ L'installazione è banale: basta confermare tutte le opzioni proposte dall'insta
 Preparare la cartella di sviluppo
 =================================
 
+Siamo finalmente pronti ad iniziare il nostro progetto. Creiamo una cartella per contenerlo,
+posizioniamoci al suo interno ed apriamo il prompt dei comandi. (Per chi non lo sapesse: 
+tenere premuto il tasto ``SHIFT`` e fare click con il tasto destro del mouse; dal menu che appare selezionare 
+``Apri finestra di comando qui``)
+
+Nel prompt comandi scriviamo::
+
+    sphinx-quickstart
+	
+A cui seguirà il dialogo riportato di seguito
+
+.. literalinclude:: sphinx-quickstart.txt
+    :language: rest
+    :caption: sphinx-quickstart
+    :name: rest-code-sphinx-quickstart
+
+Mi sembra abbastanza semplice capire dove va inserito il vostro nome e quello del progetto; per tutto 
+il resto potete dare le risposte dell'esempio.
+
+Alla fine della procedura la cartella sarà popolata da alcuni files e directory: dovremo concentrare la nostra 
+attenzione su due di loro.
+	
 .. _rest-startup-config-py:
 
 Il file di configurazione
 -------------------------
 
-.. _rest-startup-makefile:
-
-Il makefile
------------
 
 Il file index
 -------------
 
 Questo è il file che elenca tutti i file ``ReStructuredText`` che compongono la nostra guida.
 
-Quello che segue è il file indice di questa guida che dovrete adattare per il vostro lavoro
+Quello che segue è il file indice di questa guida che dovrete adattare per il vostro lavoro 
+indicando (nell'ordine voluto) i file .rst che compongono la guida.
 
 .. literalinclude:: index.rst
     :language: rest
@@ -102,6 +121,8 @@ Quello che segue è il file indice di questa guida che dovrete adattare per il v
 
 
 Fate attenzione che l'identazione è fatta da quattro spazi e non da tabulazioni (che non funzionerebbero)
+
+Non necessariamente va utilizzato un file per capitolo, potete organizzarvi come meglio credete.
 
 Il file di licenza per i PDF
 ----------------------------

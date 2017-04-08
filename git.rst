@@ -16,7 +16,7 @@ Possono essere utilizzati anche con files binari, ma perdono alcune funzioni app
 
 Utilizzeremo ``Git`` che ci facilita l'integrazione con un `sito per la condivisione <https://github.com/>`_ 
 e la pubblicazione dei
-nostri lavori come vedremo nel :ref:`prossimo capitolo <github>`.
+nostri lavori come vedremo nel :ref:`prossimo capitolo <github>` .
 
 .. _git-setup:
 

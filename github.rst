@@ -9,7 +9,7 @@ in questo capitolo vederemo come condividere i nostri files sorgenti su
 una piattaforma internet che ci consentirà di condividerli ed utilizzarli 
 per una scrittura condivisa.
 
-La piattaforma che ci consente questo è `GitHub <https://github.com//>`_: 
+La piattaforma che ci consente questo è GitHub (https://github.com//): 
 una volta registrati (gratuitamente) si possono creare infiniti repository 
 per tutti i nostri progetti.
 
