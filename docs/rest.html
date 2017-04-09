@@ -1,0 +1,669 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>1. Il progetto &mdash; draft</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Indice"
+              href="genindex.html"/>
+        <link rel="search" title="Cerca" href="search.html"/>
+    <link rel="top" title="draft" href="index.html"/>
+        <link rel="next" title="2. Scrivere il testo" href="rest-write.html"/>
+        <link rel="prev" title="Una guida per creare guide" href="index.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Guida per scrivere una guida
+          
+
+          
+            
+            <img src="_static/logo.png" class="logo" />
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Sommario</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">1. Il progetto</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#installare-il-software-necessario">1.1. Installare il software necessario</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#python-per-windows">1.1.1. Python per Windows</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sphinx-build">1.1.2. Sphinx-build</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#miktex">1.1.3. MikTex</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#preparare-la-cartella-di-sviluppo">1.2. Preparare la cartella di sviluppo</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#il-file-di-configurazione">1.2.1. Il file di configurazione</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#il-file-index">1.2.2. Il file index</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#il-file-di-licenza-per-i-pdf">1.2.3. Il file di licenza per i PDF</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="rest-write.html">2. Scrivere il testo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="git.html">3. Gestire modifiche e versioni</a></li>
+<li class="toctree-l1"><a class="reference internal" href="github.html">4. Condividere i sorgenti</a></li>
+<li class="toctree-l1"><a class="reference internal" href="github-site.html">5. Pubblicare la guida</a></li>
+<li class="toctree-l1"><a class="reference internal" href="biblio.html">6. Bibliografia</a></li>
+<li class="toctree-l1"><a class="reference internal" href="acknowledgements.html">7. Ringraziamenti</a></li>
+<li class="toctree-l1"><a class="reference internal" href="download.html">8. Download sorgenti e binari</a></li>
+<li class="toctree-l1"><a class="reference internal" href="legal.html">9. Note legali</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">Guida per scrivere una guida</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>1. Il progetto</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="il-progetto">
+<span id="rest"></span><h1>1. Il progetto<a class="headerlink" href="#il-progetto" title="Link a questa intestazione">¶</a></h1>
+<p>Per realizzare la nostra guida utilizzeremo dei tools che gestiscono un linguaggio di markup
+denominato <a class="reference external" href="http://docutils.sourceforge.net/rst.html">ReStructuredText</a></p>
+<p>Grazie a questo set di strumenti redigeremo il testo con un normalissimo editor (il <code class="docutils literal"><span class="pre">notepad</span></code> di
+Windows può andare benissimo) e questo potrà essere trasformato in un set di pagine Web (o anche una
+pagina unica se lo preferiamo), un documento Pdf, un ebook e tanti altri formati.</p>
+<p>Darò indicazione su come installare i programmi necessari in ambiente Windows, ma gli strumenti presentati
+sono tutti multipiattaforma e si possono utilizzare benissimo anche su macchine Linux o Mac.</p>
+<div class="section" id="installare-il-software-necessario">
+<span id="rest-software"></span><h2>1.1. Installare il software necessario<a class="headerlink" href="#installare-il-software-necessario" title="Link a questa intestazione">¶</a></h2>
+<p>Innanzitutto è necessario accertarsi che il proprio PC abbia un interprete <code class="docutils literal"><span class="pre">Python</span></code>, cosa comune
+nelle macchine unix/linux, ma al contrario rara nelle macchine Windows</p>
+<div class="section" id="python-per-windows">
+<span id="rest-software-python"></span><h3>1.1.1. Python per Windows<a class="headerlink" href="#python-per-windows" title="Link a questa intestazione">¶</a></h3>
+<p>Può essere scaricato dal sito <a class="reference external" href="https://www.python.org/downloads/">python.org</a> (scegliete l&#8217;installer
+appropriato per il vostro PC, non il file zip).</p>
+<p>Lanciamo l&#8217;installer</p>
+<img alt="_images/python-splash.jpg" src="_images/python-splash.jpg" />
+<p>Spuntate entrambe le caselline in basso e poi avviate l&#8217;installazione standard confermando sempre
+le scelte proposte.</p>
+<p>Al termine dell&#8217;installazione apparirà questo screen:</p>
+<img alt="_images/python-splash.jpg" src="_images/python-splash.jpg" />
+<p>dove consiglio di cliccare sulla voce <code class="docutils literal"><span class="pre">Disable</span> <span class="pre">path</span> <span class="pre">length</span> <span class="pre">limit</span></code> prima di terminare.</p>
+</div>
+<div class="section" id="sphinx-build">
+<span id="rest-software-sphinx"></span><h3>1.1.2. Sphinx-build<a class="headerlink" href="#sphinx-build" title="Link a questa intestazione">¶</a></h3>
+<p>Se avete installato una versione recente di Python (come quella delle figure sopra) dovreste già trovarvi installato
+<code class="docutils literal"><span class="pre">pip</span></code>, il gestore dei pacchetti di Python. Se così non fosse <a class="reference external" href="http://www.sphinx-doc.org/en/stable/install.html">leggete qui</a>
+come fare.</p>
+<p>Aprite il prompt dei comandi e scrivete:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">sphinx</span>
+</pre></div>
+</div>
+<p>Verranno scaricati ed installati alcuni pacchetti, al termine scrivete:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">sphinx</span><span class="o">-</span><span class="n">build</span> <span class="o">-</span><span class="n">h</span>
+</pre></div>
+</div>
+<p>che, se tutto è andato a buon fine, vi mostrerà l&#8217;help del tool.</p>
+</div>
+<div class="section" id="miktex">
+<span id="rest-software-miktex"></span><h3>1.1.3. MikTex<a class="headerlink" href="#miktex" title="Link a questa intestazione">¶</a></h3>
+<p>Il sistema di build non è in grado di generare direttamente dei file PDF, ma si appoggia ad un altro sistema di
+composizione dei testi chiamato <a class="reference external" href="https://www.latex-project.org/">LaTeX</a>. Dovremo quindi installare un interprete
+per tale linguaggio: utilizzeremo <a class="reference external" href="https://miktex.org/">MikTex</a>.</p>
+<p>L&#8217;installazione è banale: basta confermare tutte le opzioni proposte dall&#8217;installer.</p>
+</div>
+</div>
+<div class="section" id="preparare-la-cartella-di-sviluppo">
+<span id="rest-startup"></span><h2>1.2. Preparare la cartella di sviluppo<a class="headerlink" href="#preparare-la-cartella-di-sviluppo" title="Link a questa intestazione">¶</a></h2>
+<p>Siamo finalmente pronti ad iniziare il nostro progetto. Creiamo una cartella per contenerlo,
+posizioniamoci al suo interno ed apriamo il prompt dei comandi. (Per chi non lo sapesse:
+tenere premuto il tasto <code class="docutils literal"><span class="pre">SHIFT</span></code> e fare click con il tasto destro del mouse; dal menu che appare selezionare
+<code class="docutils literal"><span class="pre">Apri</span> <span class="pre">finestra</span> <span class="pre">di</span> <span class="pre">comando</span> <span class="pre">qui</span></code>)</p>
+<p>Nel prompt comandi scriviamo:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">sphinx</span><span class="o">-</span><span class="n">quickstart</span>
+</pre></div>
+</div>
+<p>A cui seguirà il dialogo riportato di seguito</p>
+<div class="literal-block-wrapper docutils container" id="rest-code-sphinx-quickstart">
+<div class="code-block-caption"><span class="caption-text">sphinx-quickstart</span><a class="headerlink" href="#rest-code-sphinx-quickstart" title="Link a questo codice">¶</a></div>
+<div class="highlight-default"><div class="highlight"><pre><span></span>C:\guide_guide&gt;sphinx-quickstart
+Welcome to the Sphinx 1.5.3 quickstart utility.
+
+Please enter values for the following settings (just press Enter to
+accept a default value, if one is given in brackets).
+
+Enter the root path for documentation.
+&gt; Root path for the documentation [.]:
+
+You have two options for placing the build directory for Sphinx output.
+Either, you use a directory &quot;_build&quot; within the root path, or you separate
+&quot;source&quot; and &quot;build&quot; directories within the root path.
+&gt; Separate source and build directories (y/n) [n]:
+
+Inside the root directory, two more directories will be created; &quot;_templates&quot;
+for custom HTML templates and &quot;_static&quot; for custom stylesheets and other static
+files. You can enter another prefix (such as &quot;.&quot;) to replace the underscore.
+&gt; Name prefix for templates and static dir [_]:
+
+The project name will occur in several places in the built documentation.
+&gt; Project name: guide_guide
+&gt; Author name(s): Roberto Ceccarelli
+
+Sphinx has the notion of a &quot;version&quot; and a &quot;release&quot; for the
+software. Each version can have multiple releases. For example, for
+Python the version is something like 2.5 or 3.0, while the release is
+something like 2.5.1 or 3.0a1.  If you don&#39;t need this dual structure,
+just set both to the same value.
+&gt; Project version []: 0.1
+&gt; Project release [0.1]:
+
+If the documents are to be written in a language other than English,
+you can select a language here by its language code. Sphinx will then
+translate text that it generates into that language.
+
+For a list of supported codes, see
+http://sphinx-doc.org/config.html#confval-language.
+&gt; Project language [en]: it
+
+The file name suffix for source files. Commonly, this is either &quot;.txt&quot;
+or &quot;.rst&quot;.  Only files with this suffix are considered documents.
+&gt; Source file suffix [.rst]:
+
+One document is special in that it is considered the top node of the
+&quot;contents tree&quot;, that is, it is the root of the hierarchical structure
+of the documents. Normally, this is &quot;index&quot;, but if your &quot;index&quot;
+document is a custom template, you can also set this to another filename.
+&gt; Name of your master document (without suffix) [index]:
+
+Sphinx can also add configuration for epub output:
+&gt; Do you want to use the epub builder (y/n) [n]: y
+
+Please indicate if you want to use one of the following Sphinx extensions:
+&gt; autodoc: automatically insert docstrings from modules (y/n) [n]:
+&gt; doctest: automatically test code snippets in doctest blocks (y/n) [n]:
+&gt; intersphinx: link between Sphinx documentation of different projects (y/n) [n]:
+&gt; todo: write &quot;todo&quot; entries that can be shown or hidden on build (y/n) [n]:
+&gt; coverage: checks for documentation coverage (y/n) [n]:
+&gt; imgmath: include math, rendered as PNG or SVG images (y/n) [n]:
+&gt; mathjax: include math, rendered in the browser by MathJax (y/n) [n]:
+&gt; ifconfig: conditional inclusion of content based on config values (y/n) [n]:
+&gt; viewcode: include links to the source code of documented Python objects (y/n) [n]:
+&gt; githubpages: create .nojekyll file to publish the document on GitHub pages (y/n) [n]: y
+
+A Makefile and a Windows command file can be generated for you so that you
+only have to run e.g. `make html&#39; instead of invoking sphinx-build
+directly.
+&gt; Create Makefile? (y/n) [y]: y
+&gt; Create Windows command file? (y/n) [y]: y
+
+Creating file .\conf.py.
+Creating file .\index.rst.
+Creating file .\Makefile.
+Creating file .\make.bat.
+
+Finished: An initial directory structure has been created.
+
+You should now populate your master file .\index.rst and create other documentation
+source files. Use the Makefile to build the docs, like so:
+   make builder
+where &quot;builder&quot; is one of the supported builders, e.g. html, latex or linkcheck.
+
+
+C:\guide_guide&gt;
+</pre></div>
+</div>
+</div>
+<p>Mi sembra abbastanza semplice capire dove va inserito il vostro nome e quello del progetto; per tutto
+il resto potete dare le risposte dell&#8217;esempio.</p>
+<p>Alla fine della procedura la cartella sarà popolata da alcuni files e directory: dovremo concentrare la nostra
+attenzione su due di loro.</p>
+<div class="section" id="il-file-di-configurazione">
+<span id="rest-startup-config-py"></span><h3>1.2.1. Il file di configurazione<a class="headerlink" href="#il-file-di-configurazione" title="Link a questa intestazione">¶</a></h3>
+<p>Questo file contiene tutte le impostazioni che regolano il <em>rendering</em> della nostra guida sulle varie piattaforme.
+Non lo analizzeremo tutto, ma solo le parti su cui è necessario intervenire per ottenere lo stile con cui è stata
+compilata questa guida.</p>
+<div class="literal-block-wrapper docutils container" id="rest-code-config-py-begin">
+<div class="code-block-caption"><span class="caption-text">config.py - preambolo</span><a class="headerlink" href="#rest-code-config-py-begin" title="Link a questo codice">¶</a></div>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="c1"># All configuration values have a default; values that are commented out</span>
+<span class="c1"># serve to show the default.</span>
+
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">shlex</span>
+
+<span class="c1"># If extensions (or modules to document with autodoc) are in another directory,</span>
+<span class="c1"># add these directories to sys.path here. If the directory is relative to the</span>
+<span class="c1"># documentation root, use os.path.abspath to make it absolute, like shown here.</span>
+<span class="c1">#sys.path.insert(0, os.path.abspath(&#39;.&#39;))</span>
+</pre></div>
+</div>
+</div>
+<p>Nelle opzioni generali dobbiamo controllare</p>
+<div class="literal-block-wrapper docutils container" id="rest-code-config-py-general">
+<div class="code-block-caption"><span class="caption-text">config.py - parametri generali</span><a class="headerlink" href="#rest-code-config-py-general" title="Link a questo codice">¶</a></div>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="c1"># -- General configuration ------------------------------------------------</span>
+
+<span class="c1"># If your documentation needs a minimal Sphinx version, state it here.</span>
+<span class="c1">#needs_sphinx = &#39;1.0&#39;</span>
+
+<span class="c1"># Add any Sphinx extension module names here, as strings. They can be</span>
+<span class="c1"># extensions coming with Sphinx (named &#39;sphinx.ext.*&#39;) or your custom</span>
+<span class="c1"># ones.</span>
+<span class="c1"># Install cloud_sptheme with the following command:</span>
+<span class="c1"># pip install cloud_sptheme</span>
+<span class="n">extensions</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s1">&#39;sphinx.ext.autodoc&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;sphinx.ext.mathjax&#39;</span><span class="p">,</span>
+	<span class="s1">&#39;sphinx.ext.githubpages&#39;</span><span class="p">,</span>
+<span class="p">]</span>
+
+<span class="c1"># Add any paths that contain templates here, relative to this directory.</span>
+<span class="n">templates_path</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;_templates&#39;</span><span class="p">]</span>
+
+<span class="c1"># The suffix(es) of source filenames.</span>
+<span class="c1"># You can specify multiple suffix as a list of string:</span>
+<span class="c1"># source_suffix = [&#39;.rst&#39;, &#39;.md&#39;]</span>
+<span class="n">source_suffix</span> <span class="o">=</span> <span class="s1">&#39;.rst&#39;</span>
+
+<span class="c1"># The encoding of source files.</span>
+<span class="c1">#source_encoding = &#39;utf-8-sig&#39;</span>
+
+<span class="c1"># The master toctree document.</span>
+<span class="n">master_doc</span> <span class="o">=</span> <span class="s1">&#39;index&#39;</span>
+
+<span class="c1"># General information about the project.</span>
+<span class="n">project</span> <span class="o">=</span> <span class="s1">&#39;Guida per scrivere una guida&#39;</span>
+<span class="n">copyright</span> <span class="o">=</span> <span class="s1">&#39;2017 Roberto Ceccarelli - The Strawberry Field&#39;</span>
+<span class="n">author</span> <span class="o">=</span> <span class="s1">&#39;Roberto Ceccarelli&#39;</span>
+
+<span class="c1"># The version info for the project you&#39;re documenting, acts as replacement for</span>
+<span class="c1"># |version| and |release|, also used in various other places throughout the</span>
+<span class="c1"># built documents.</span>
+<span class="c1">#</span>
+<span class="c1"># The short X.Y version.</span>
+<span class="n">version</span> <span class="o">=</span> <span class="s1">&#39;0.1&#39;</span>
+<span class="c1"># The full version, including alpha/beta/rc tags.</span>
+<span class="n">release</span> <span class="o">=</span> <span class="s1">&#39;0.1 draft&#39;</span>
+
+<span class="c1"># The language for content autogenerated by Sphinx. Refer to documentation</span>
+<span class="c1"># for a list of supported languages.</span>
+<span class="c1">#</span>
+<span class="c1"># This is also used if you do content translation via gettext catalogs.</span>
+<span class="c1"># Usually you set &quot;language&quot; from the command line for these cases.</span>
+<span class="n">language</span> <span class="o">=</span> <span class="s1">&#39;it&#39;</span>
+
+<span class="c1"># There are two options for replacing |today|: either, you set today to some</span>
+<span class="c1"># non-false value, then it is used:</span>
+<span class="c1">#today = &#39;&#39;</span>
+<span class="c1"># Else, today_fmt is used as the format for a strftime call.</span>
+<span class="n">today_fmt</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="si">%d</span><span class="s1">.%m.%Y&#39;</span>
+
+</pre></div>
+</div>
+</div>
+<p>Nella sezione HTML</p>
+<div class="literal-block-wrapper docutils container" id="rest-code-config-py-html">
+<div class="code-block-caption"><span class="caption-text">config.py - HTML</span><a class="headerlink" href="#rest-code-config-py-html" title="Link a questo codice">¶</a></div>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="c1"># -- Options for HTML output ----------------------------------------------</span>
+
+<span class="c1"># The theme to use for HTML and HTML Help pages.  See the documentation for</span>
+<span class="c1"># a list of builtin themes.</span>
+<span class="n">html_theme</span> <span class="o">=</span> <span class="s1">&#39;sphinx_rtd_theme&#39;</span>
+
+<span class="c1"># Theme options are theme-specific and customize the look and feel of a theme</span>
+<span class="c1"># further.  For a list of options available for each theme, see the</span>
+<span class="c1"># documentation.</span>
+<span class="c1">#html_theme_options = {}</span>
+
+<span class="c1"># Add any paths that contain custom themes here, relative to this directory.</span>
+<span class="c1">#html_theme_path = []</span>
+
+<span class="c1"># The name for this set of Sphinx documents.  If None, it defaults to</span>
+<span class="c1"># &quot;&lt;project&gt; v&lt;release&gt; documentation&quot;.</span>
+<span class="n">html_title</span> <span class="o">=</span> <span class="s2">&quot;draft&quot;</span>
+
+<span class="c1"># A shorter title for the navigation bar.  Default is the same as html_title.</span>
+<span class="c1">#html_short_title = None</span>
+
+<span class="c1"># The name of an image file (relative to this directory) to place at the top</span>
+<span class="c1"># of the sidebar.</span>
+<span class="n">html_logo</span> <span class="o">=</span> <span class="s1">&#39;images/logo.png&#39;</span>
+
+<span class="c1"># The name of an image file (within the static path) to use as favicon of the</span>
+<span class="c1"># docs.  This file should be a Windows icon file (.ico) being 16x16 or 32x32</span>
+<span class="c1"># pixels large.</span>
+<span class="c1">#html_favicon = None</span>
+
+<span class="c1"># Add any paths that contain custom static files (such as style sheets) here,</span>
+<span class="c1"># relative to this directory. They are copied after the builtin static files,</span>
+<span class="c1"># so a file named &quot;default.css&quot; will overwrite the builtin &quot;default.css&quot;.</span>
+<span class="n">html_static_path</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;_static&#39;</span><span class="p">]</span>
+
+<span class="c1"># If true, links to the reST sources are added to the pages.</span>
+<span class="n">html_show_sourcelink</span> <span class="o">=</span> <span class="bp">False</span>
+
+<span class="c1"># Language to be used for generating the HTML full-text search index.</span>
+<span class="c1"># Sphinx supports the following languages:</span>
+<span class="c1">#   &#39;da&#39;, &#39;de&#39;, &#39;en&#39;, &#39;es&#39;, &#39;fi&#39;, &#39;fr&#39;, &#39;h&#39;, &#39;it&#39;, &#39;ja&#39;</span>
+<span class="c1">#   &#39;nl&#39;, &#39;no&#39;, &#39;pt&#39;, &#39;ro&#39;, &#39;r&#39;, &#39;sv&#39;, &#39;tr&#39;</span>
+<span class="n">html_search_language</span> <span class="o">=</span> <span class="s1">&#39;it&#39;</span>
+
+
+
+</pre></div>
+</div>
+</div>
+<p>Nella sezione LaTeX</p>
+<div class="literal-block-wrapper docutils container" id="rest-code-config-py-latex">
+<div class="code-block-caption"><span class="caption-text">config.py - LaTeX</span><a class="headerlink" href="#rest-code-config-py-latex" title="Link a questo codice">¶</a></div>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="c1"># -- Options for LaTeX output ---------------------------------------------</span>
+
+<span class="n">latex_elements</span> <span class="o">=</span> <span class="p">{</span>
+
+<span class="s1">&#39;classoptions&#39;</span><span class="p">:</span> <span class="s1">&#39;,openany,oneside&#39;</span><span class="p">,</span>
+<span class="s1">&#39;babel&#39;</span><span class="p">:</span> <span class="s1">&#39;</span><span class="se">\\</span><span class="s1">usepackage[italian]{babel}&#39;</span><span class="p">,</span>
+
+<span class="c1"># The paper size (&#39;letterpaper&#39; or &#39;a4paper&#39;).</span>
+<span class="s1">&#39;papersize&#39;</span><span class="p">:</span> <span class="s1">&#39;a4paper&#39;</span><span class="p">,</span>
+
+<span class="c1"># The font size (&#39;10pt&#39;, &#39;11pt&#39; or &#39;12pt&#39;).</span>
+<span class="c1">#&#39;pointsize&#39;: &#39;10pt&#39;,</span>
+
+
+<span class="c1"># Additional stuff for the LaTeX preamble.</span>
+<span class="s1">&#39;preamble&#39;</span><span class="p">:</span> <span class="sa">r</span><span class="s1">&#39;&#39;&#39;</span>
+<span class="s1">\usepackage[default]{lato}</span>
+<span class="s1">\usepackage{inconsolata}</span>
+<span class="s1">\usepackage{xmpincl}</span>
+<span class="s1">\includexmp{license}</span>
+<span class="s1">\hypersetup{pdftex,</span>
+<span class="s1">		pdfauthor={Roberto Ceccarelli - The Strawberry Field},</span>
+<span class="s1">		pdftitle={Guida per scrivere una Guida},</span>
+<span class="s1">		pdfsubject={Guida per scrivere una guida con ReStructuredText, Git e GitHub},</span>
+<span class="s1">		pdfkeywords={Guida, howto, manual ReStructuredText, git, GitHub}}</span>
+<span class="s1">&#39;&#39;&#39;</span><span class="p">,</span>
+
+<span class="c1"># Latex figure (float) alignment</span>
+<span class="c1">#&#39;figure_align&#39;: &#39;htbp&#39;,</span>
+
+<span class="s1">&#39;fncychap&#39;</span><span class="p">:</span> <span class="s1">&#39;</span><span class="se">\\</span><span class="s1">usepackage[Bjornstrup]{fncychap}&#39;</span><span class="p">,</span>
+
+<span class="p">}</span>
+
+<span class="c1"># include file for license</span>
+<span class="n">latex_additional_files</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;license.xmp&#39;</span><span class="p">]</span>
+
+<span class="c1"># Grouping the document tree into LaTeX files. List of tuples</span>
+<span class="c1"># (source start file, target name, title,</span>
+<span class="c1">#  author, documentclass [howto, manual, or own class]).</span>
+<span class="n">latex_documents</span> <span class="o">=</span> <span class="p">[</span>
+  <span class="p">(</span><span class="n">master_doc</span><span class="p">,</span> <span class="s1">&#39;guide_guide.tex&#39;</span><span class="p">,</span> <span class="s1">&#39;Guida per scrivere una Guida&#39;</span><span class="p">,</span>
+   <span class="s1">&#39;Roberto Ceccarelli&#39;</span><span class="p">,</span> <span class="s1">&#39;manual&#39;</span><span class="p">),</span>
+<span class="p">]</span>
+
+<span class="c1">#latex_toplevel_sectioning = &#39;chapter&#39;</span>
+
+<span class="c1"># The name of an image file (relative to this directory) to place at the top of</span>
+<span class="c1"># the title page.</span>
+<span class="n">latex_logo</span> <span class="o">=</span> <span class="s1">&#39;images/cover_image.png&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="il-file-index">
+<span id="rest-startup-index-rst"></span><h3>1.2.2. Il file index<a class="headerlink" href="#il-file-index" title="Link a questa intestazione">¶</a></h3>
+<p>Questo è il file che elenca tutti i file <code class="docutils literal"><span class="pre">ReStructuredText</span></code> che compongono la nostra guida.</p>
+<p>Quello che segue è il file indice di questa guida che dovrete adattare per il vostro lavoro
+indicando (nell&#8217;ordine voluto) i file .rst che compongono la guida.</p>
+<div class="literal-block-wrapper docutils container" id="rest-code-index-rst">
+<div class="code-block-caption"><span class="caption-text">index.rst</span><a class="headerlink" href="#rest-code-index-rst" title="Link a questo codice">¶</a></div>
+<div class="highlight-rest"><div class="highlight"><pre><span></span><span class="cp">.. TSF Guide Howto master file, created by</span>
+<span class="cp">   sphinx-quickstart on Tue Dec 22 19:39:50 2015.</span>
+<span class="cp">   You can adapt this file completely to your liking, but it should at least</span>
+<span class="cp">   contain the root `toctree` directive.</span>
+
+<span class="gh">Una guida per creare guide </span>
+<span class="gh">==========================</span>
+
+<span class="p">..</span> <span class="ow">toctree</span><span class="p">::</span>
+    <span class="nc">:maxdepth:</span> <span class="nf">3</span>
+    <span class="nc">:numbered:</span>
+    <span class="nc">:name:</span> <span class="nf">mastertoc</span>
+    <span class="nc">:caption:</span> <span class="nf">Sommario</span>
+
+    rest
+    rest-write
+    git
+    github
+    github-site
+    biblio
+    acknowledgements
+    download
+    legal
+	
+</pre></div>
+</div>
+</div>
+<p>Fate attenzione che l&#8217;identazione è fatta da quattro spazi e non da tabulazioni (che non funzionerebbero)</p>
+<p>Non necessariamente va utilizzato un file per capitolo, potete organizzarvi come meglio credete.</p>
+</div>
+<div class="section" id="il-file-di-licenza-per-i-pdf">
+<h3>1.2.3. Il file di licenza per i PDF<a class="headerlink" href="#il-file-di-licenza-per-i-pdf" title="Link a questa intestazione">¶</a></h3>
+<p>Non strettamente necessario, ma utile per realizzare file PDF che espongano la loro licenza
+ai motori di ricerca.</p>
+<p>Sul sito di creative Commons potete generarlo utilizzado
+<a class="reference external" href="https://creativecommons.org/choose/#metadata">questo form</a>
+oppure potete modificare il file per adattarlo alla licenza che avete scelto.</p>
+<p>Questo è il file utilizzato per questa guida:</p>
+<div class="literal-block-wrapper docutils container" id="rest-code-license-xmp">
+<div class="code-block-caption"><span class="caption-text">license.xmp</span><a class="headerlink" href="#rest-code-license-xmp" title="Link a questo codice">¶</a></div>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="cp">&lt;?xpacket begin=&#39;&#39; id=&#39;&#39;?&gt;</span>
+<span class="nt">&lt;x:xmpmeta</span> <span class="na">xmlns:x=</span><span class="s">&#39;adobe:ns:meta/&#39;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;rdf:RDF</span> <span class="na">xmlns:rdf=</span><span class="s">&#39;http://www.w3.org/1999/02/22-rdf-syntax-ns#&#39;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;rdf:Description</span> <span class="na">rdf:about=</span><span class="s">&#39;&#39;</span>
+		     <span class="na">xmlns:xapRights=</span><span class="s">&#39;http://ns.adobe.com/xap/1.0/rights/&#39;</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;xapRights:Marked&gt;</span>True<span class="nt">&lt;/xapRights:Marked&gt;</span>
+    <span class="nt">&lt;/rdf:Description&gt;</span>
+    <span class="nt">&lt;rdf:Description</span> <span class="na">rdf:about=</span><span class="s">&#39;&#39;</span>
+		     <span class="na">xmlns:xapRights=</span><span class="s">&#39;http://ns.adobe.com/xap/1.0/rights/&#39;</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;xapRights:WebStatement</span> <span class="na">rdf:resource=</span><span class="s">&#39;https://github.com/strawberryfield/guide_guide&#39;</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;/rdf:Description&gt;</span>
+    <span class="nt">&lt;rdf:Description</span> <span class="na">rdf:about=</span><span class="s">&#39;&#39;</span>
+		     <span class="na">xmlns:xapRights=</span><span class="s">&#39;http://ns.adobe.com/xap/1.0/rights/&#39;</span>
+		     <span class="nt">&gt;</span>
+      <span class="nt">&lt;xapRights:UsageTerms&gt;</span>
+	<span class="nt">&lt;rdf:Alt&gt;</span>
+	  <span class="nt">&lt;rdf:li</span> <span class="na">xml:lang=</span><span class="s">&#39;x-default&#39;</span> <span class="nt">&gt;</span>Quest<span class="ni">&amp;#39;</span>opera è distribuita con Licenza <span class="ni">&amp;lt;</span>a rel=<span class="ni">&amp;#34;</span>license<span class="ni">&amp;#34;</span> href=<span class="ni">&amp;#34;</span>http://creativecommons.org/licenses/by-nc-sa/4.0/<span class="ni">&amp;#34;&amp;gt;</span>Creative Commons Attribuzione - Non commerciale - Condividi allo stesso modo 4.0 Internazionale<span class="ni">&amp;lt;</span>/a<span class="ni">&amp;gt;</span>.<span class="nt">&lt;/rdf:li&gt;</span>
+	  <span class="nt">&lt;rdf:li</span> <span class="na">xml:lang=</span><span class="s">&#39;it_IT&#39;</span> <span class="nt">&gt;</span>Quest<span class="ni">&amp;#39;</span>opera è distribuita con Licenza <span class="ni">&amp;lt;</span>a rel=<span class="ni">&amp;#34;</span>license<span class="ni">&amp;#34;</span> href=<span class="ni">&amp;#34;</span>http://creativecommons.org/licenses/by-nc-sa/4.0/<span class="ni">&amp;#34;&amp;gt;</span>Creative Commons Attribuzione - Non commerciale - Condividi allo stesso modo 4.0 Internazionale<span class="ni">&amp;lt;</span>/a<span class="ni">&amp;gt;</span>.<span class="nt">&lt;/rdf:li&gt;</span>
+	  <span class="nt">&lt;rdf:li</span> <span class="na">xml:lang=</span><span class="s">&#39;en&#39;</span> <span class="nt">&gt;</span>This work is licensed under a <span class="ni">&amp;lt;</span>a rel=<span class="ni">&amp;#34;</span>license<span class="ni">&amp;#34;</span> href=<span class="ni">&amp;#34;</span>http://creativecommons.org/licenses/by-nc-sa/4.0/<span class="ni">&amp;#34;&amp;gt;</span>Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License<span class="ni">&amp;lt;</span>/a<span class="ni">&amp;gt;</span>.<span class="nt">&lt;/rdf:li&gt;</span>
+	  <span class="nt">&lt;/rdf:Alt&gt;</span>
+      <span class="nt">&lt;/xapRights:UsageTerms&gt;</span>
+    <span class="nt">&lt;/rdf:Description&gt;</span>
+    <span class="nt">&lt;rdf:Description</span> <span class="na">rdf:about=</span><span class="s">&#39;&#39;</span>
+		     <span class="na">xmlns:dc=</span><span class="s">&#39;http://purl.org/dc/elements/1.1/&#39;</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;dc:title&gt;</span>
+	<span class="nt">&lt;rdf:Alt&gt;</span>
+	  <span class="nt">&lt;rdf:li</span> <span class="na">xml:lang=</span><span class="s">&#39;x-default&#39;</span><span class="nt">&gt;</span>Guida per scrivere una guida<span class="nt">&lt;/rdf:li&gt;</span>
+	  <span class="nt">&lt;rdf:li</span> <span class="na">xml:lang=</span><span class="s">&#39;it_IT&#39;</span><span class="nt">&gt;</span>Guida per scrivere una guida<span class="nt">&lt;/rdf:li&gt;</span>
+	<span class="nt">&lt;/rdf:Alt&gt;</span>
+      <span class="nt">&lt;/dc:title&gt;</span>
+    <span class="nt">&lt;/rdf:Description&gt;</span>
+    <span class="nt">&lt;rdf:Description</span> <span class="na">rdf:about=</span><span class="s">&#39;&#39;</span>
+      <span class="na">xmlns:cc=</span><span class="s">&#39;http://creativecommons.org/ns#&#39;</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;cc:license</span> <span class="na">rdf:resource=</span><span class="s">&#39;http://creativecommons.org/licenses/by-nc-sa/4.0/&#39;</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;/rdf:Description&gt;</span>
+    <span class="nt">&lt;rdf:Description</span> <span class="na">rdf:about=</span><span class="s">&#39;&#39;</span>
+      <span class="na">xmlns:cc=</span><span class="s">&#39;http://creativecommons.org/ns#&#39;</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;cc:attributionName&gt;</span>Roberto Ceccarelli - The Strawberry Field<span class="nt">&lt;/cc:attributionName&gt;</span>
+    <span class="nt">&lt;/rdf:Description&gt;</span>
+    
+  <span class="nt">&lt;/rdf:RDF&gt;</span>
+<span class="nt">&lt;/x:xmpmeta&gt;</span>
+<span class="cp">&lt;?xpacket end=&#39;r&#39;?&gt;</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="rest-write.html" class="btn btn-neutral float-right" title="2. Scrivere il testo" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral" title="Una guida per creare guide" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017 Roberto Ceccarelli - The Strawberry Field.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0.1 draft',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="_static/translations.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

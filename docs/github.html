@@ -1,0 +1,318 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>4. Condividere i sorgenti &mdash; draft</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Indice"
+              href="genindex.html"/>
+        <link rel="search" title="Cerca" href="search.html"/>
+    <link rel="top" title="draft" href="index.html"/>
+        <link rel="next" title="5. Pubblicare la guida" href="github-site.html"/>
+        <link rel="prev" title="3. Gestire modifiche e versioni" href="git.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Guida per scrivere una guida
+          
+
+          
+            
+            <img src="_static/logo.png" class="logo" />
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Sommario</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="rest.html">1. Il progetto</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rest-write.html">2. Scrivere il testo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="git.html">3. Gestire modifiche e versioni</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">4. Condividere i sorgenti</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#creare-un-repository-su-github">4.1. Creare un repository su GitHub</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#sincronizzare-i-repository">4.2. Sincronizzare i repository</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#pull-del-repository-remoto">4.2.1. Pull del repository remoto</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#push-del-repository-locale">4.2.2. Push del repository locale</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#mantenere-sincronizzati-i-repository">4.3. Mantenere sincronizzati i repository</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#da-locale-a-remoto">4.3.1. Da locale a remoto</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#da-remoto-a-locale">4.3.2. Da remoto a locale</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#i-file-di-servizio">4.4. I file di servizio</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#readme-md">4.4.1. README.md</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#license-txt">4.4.2. LICENSE.txt</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="github-site.html">5. Pubblicare la guida</a></li>
+<li class="toctree-l1"><a class="reference internal" href="biblio.html">6. Bibliografia</a></li>
+<li class="toctree-l1"><a class="reference internal" href="acknowledgements.html">7. Ringraziamenti</a></li>
+<li class="toctree-l1"><a class="reference internal" href="download.html">8. Download sorgenti e binari</a></li>
+<li class="toctree-l1"><a class="reference internal" href="legal.html">9. Note legali</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">Guida per scrivere una guida</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>4. Condividere i sorgenti</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="condividere-i-sorgenti">
+<span id="github"></span><h1>4. Condividere i sorgenti<a class="headerlink" href="#condividere-i-sorgenti" title="Link a questa intestazione">¶</a></h1>
+<p>Finora abbiamo gestito la scrittura della nostra guida sul nostro PC:
+in questo capitolo vederemo come condividere i nostri files sorgenti su
+una piattaforma internet che ci consentirà di condividerli ed utilizzarli
+per una scrittura condivisa.</p>
+<p>La piattaforma che ci consente questo è GitHub (<a class="reference external" href="https://github.com//">https://github.com//</a>):
+una volta registrati (gratuitamente) si possono creare infiniti repository
+per tutti i nostri progetti.</p>
+<div class="section" id="creare-un-repository-su-github">
+<h2>4.1. Creare un repository su GitHub<a class="headerlink" href="#creare-un-repository-su-github" title="Link a questa intestazione">¶</a></h2>
+<p>Una volta creato l&#8217;account su GitHub ci viene data la possibilità di creare un nuovo repository</p>
+<img alt="_images/start_project.jpg" src="_images/start_project.jpg" />
+<p>clicchiamo su <code class="docutils literal"><span class="pre">Start</span> <span class="pre">a</span> <span class="pre">project</span></code> e completiamo questo form:</p>
+<img alt="_images/create_repository.jpg" src="_images/create_repository.jpg" />
+<p>scegliendo un nome appropriato per il progetto (che comunque potrà essere cambiato in seguito)</p>
+<p>Inseriamo una breve, ma significativa, descrizione e abilitiamo la generazione del readme.
+Non preoccupiamoci del file <code class="docutils literal"><span class="pre">.gitignore</span></code> (ne abbiamo già uno nel nostro repository locale)
+e nemmeno della licenza che inseriremo in seguto
+(le licenze proposte sono rivolte alla scrittura di software e poco adatte alla documentazione).</p>
+<p>Il tipo di repository va lasciato su <code class="docutils literal"><span class="pre">Public</span></code>: in questo modo chiunque, anche non iscritto a GitHub
+può leggerne e scaricare il contenuto; gli eventuali utenti che autorizzeremo potranno anche aggiornarlo.</p>
+<p>Confermiamo il tutto con <code class="docutils literal"><span class="pre">Create</span> <span class="pre">repository</span></code> e GitHub ci presenterà il repository appena creato:</p>
+<img alt="_images/repository_created.jpg" src="_images/repository_created.jpg" />
+</div>
+<div class="section" id="sincronizzare-i-repository">
+<h2>4.2. Sincronizzare i repository<a class="headerlink" href="#sincronizzare-i-repository" title="Link a questa intestazione">¶</a></h2>
+<p>In questo momento abbiamo due repository separati: uno sul nostro PC ed uno su GitHub.
+Dovremo fondere i due repository in modo da poter replicare le modifiche locali sul repository remoto
+e viceversa.</p>
+<div class="section" id="pull-del-repository-remoto">
+<h3>4.2.1. Pull del repository remoto<a class="headerlink" href="#pull-del-repository-remoto" title="Link a questa intestazione">¶</a></h3>
+<p>Apriamo il prompt dei comandi nella nostra cartella di lavoro e scriviamo:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">pull</span> <span class="n">guide_guide</span> <span class="n">master</span> <span class="o">--</span><span class="n">allow</span><span class="o">-</span><span class="n">unrelated</span><span class="o">-</span><span class="n">histories</span>
+</pre></div>
+</div>
+<p>Dove a <code class="docutils literal"><span class="pre">guide_guide</span></code> dovremo sostituire il nome del nostro repository remoto.</p>
+<p>Otterremo in risposta qualcosa di simile a questo:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">From</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">strawberryfield</span><span class="o">/</span><span class="n">guide_guide</span>
+ <span class="o">*</span> <span class="n">branch</span>            <span class="n">master</span>     <span class="o">-&gt;</span> <span class="n">FETCH_HEAD</span>
+<span class="n">Merge</span> <span class="n">made</span> <span class="n">by</span> <span class="n">the</span> <span class="s1">&#39;recursive&#39;</span> <span class="n">strategy</span><span class="o">.</span>
+<span class="n">README</span><span class="o">.</span><span class="n">md</span> <span class="o">|</span> <span class="mi">2</span> <span class="o">++</span>
+<span class="mi">1</span> <span class="n">file</span> <span class="n">changed</span><span class="p">,</span> <span class="mi">2</span> <span class="n">insertions</span><span class="p">(</span><span class="o">+</span><span class="p">)</span>
+<span class="n">create</span> <span class="n">mode</span> <span class="mi">100644</span> <span class="n">README</span><span class="o">.</span><span class="n">md</span>
+</pre></div>
+</div>
+<p>Il repository su github è stato fuso con quello locale: ce ne accorgiamo
+perchè nella nostra directory di lavoro è apparso il file <code class="docutils literal"><span class="pre">README.md</span></code>
+che era l&#8217;unico presente nel repository remoto.</p>
+<p>Possiamo chiudere la shell comandi.</p>
+</div>
+<div class="section" id="push-del-repository-locale">
+<h3>4.2.2. Push del repository locale<a class="headerlink" href="#push-del-repository-locale" title="Link a questa intestazione">¶</a></h3>
+<p>Riapriamo la GUI di Git e premiamo <code class="docutils literal"><span class="pre">Push</span></code></p>
+<img alt="_images/push.jpg" src="_images/push.jpg" />
+<p>Con questa operazione trasferiamo il contenuto del repository locale su quello remoto.
+Non c&#8217;è nulla da modificare e quindi confermiamo premendo <code class="docutils literal"><span class="pre">Push</span></code>.</p>
+<p>Al termine del trasferimento riceveremo questa conferma:</p>
+<img alt="_images/push_ok.jpg" src="_images/push_ok.jpg" />
+<p>Il nostro repository è stato trasferito su GitHub e se controlliamo dal sito possiamo vedere
+che ci sono tutti i nostri file</p>
+<img alt="_images/github_pushed.jpg" src="_images/github_pushed.jpg" />
+<p>e non solo: vengono sincronizzati anche tutti i commit che abbiamo eseguito sul PC locale</p>
+<img alt="_images/commits_list.jpg" src="_images/commits_list.jpg" />
+</div>
+</div>
+<div class="section" id="mantenere-sincronizzati-i-repository">
+<h2>4.3. Mantenere sincronizzati i repository<a class="headerlink" href="#mantenere-sincronizzati-i-repository" title="Link a questa intestazione">¶</a></h2>
+<div class="section" id="da-locale-a-remoto">
+<h3>4.3.1. Da locale a remoto<a class="headerlink" href="#da-locale-a-remoto" title="Link a questa intestazione">¶</a></h3>
+</div>
+<div class="section" id="da-remoto-a-locale">
+<h3>4.3.2. Da remoto a locale<a class="headerlink" href="#da-remoto-a-locale" title="Link a questa intestazione">¶</a></h3>
+</div>
+</div>
+<div class="section" id="i-file-di-servizio">
+<h2>4.4. I file di servizio<a class="headerlink" href="#i-file-di-servizio" title="Link a questa intestazione">¶</a></h2>
+<p>E&#8217; buona norma includere nei progetti ospitati su GitHub due file: il <em>readme</em> e la licenza.</p>
+<div class="section" id="readme-md">
+<h3>4.4.1. README.md<a class="headerlink" href="#readme-md" title="Link a questa intestazione">¶</a></h3>
+</div>
+<div class="section" id="license-txt">
+<h3>4.4.2. LICENSE.txt<a class="headerlink" href="#license-txt" title="Link a questa intestazione">¶</a></h3>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="github-site.html" class="btn btn-neutral float-right" title="5. Pubblicare la guida" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="git.html" class="btn btn-neutral" title="3. Gestire modifiche e versioni" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017 Roberto Ceccarelli - The Strawberry Field.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0.1 draft',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="_static/translations.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

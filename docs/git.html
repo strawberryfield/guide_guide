@@ -1,0 +1,292 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>3. Gestire modifiche e versioni &mdash; draft</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Indice"
+              href="genindex.html"/>
+        <link rel="search" title="Cerca" href="search.html"/>
+    <link rel="top" title="draft" href="index.html"/>
+        <link rel="next" title="4. Condividere i sorgenti" href="github.html"/>
+        <link rel="prev" title="2. Scrivere il testo" href="rest-write.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Guida per scrivere una guida
+          
+
+          
+            
+            <img src="_static/logo.png" class="logo" />
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Sommario</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="rest.html">1. Il progetto</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rest-write.html">2. Scrivere il testo</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">3. Gestire modifiche e versioni</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#installare-git">3.1. Installare Git</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#creare-un-repository">3.2. Creare un repository</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#il-file-gitignore">3.2.1. Il file .gitignore</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#attivare-il-repository">3.2.2. Attivare il repository</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#il-primo-commit">3.2.3. Il primo commit</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#utilizzare-il-repository">3.3. Utilizzare il repository</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="github.html">4. Condividere i sorgenti</a></li>
+<li class="toctree-l1"><a class="reference internal" href="github-site.html">5. Pubblicare la guida</a></li>
+<li class="toctree-l1"><a class="reference internal" href="biblio.html">6. Bibliografia</a></li>
+<li class="toctree-l1"><a class="reference internal" href="acknowledgements.html">7. Ringraziamenti</a></li>
+<li class="toctree-l1"><a class="reference internal" href="download.html">8. Download sorgenti e binari</a></li>
+<li class="toctree-l1"><a class="reference internal" href="legal.html">9. Note legali</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">Guida per scrivere una guida</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>3. Gestire modifiche e versioni</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="gestire-modifiche-e-versioni">
+<span id="git"></span><h1>3. Gestire modifiche e versioni<a class="headerlink" href="#gestire-modifiche-e-versioni" title="Link a questa intestazione">¶</a></h1>
+<p>Uno dei vantaggi di gestire la documentazione con dei file di testo e non con formati proprietari come
+quelli dei word-processor (Word, Libre Office Writer...) è che si possono gestire con degli strumenti
+di <em>versioning</em> che permettono di tenere traccia di tutte le modifiche anche se effettuate da persone diverse.</p>
+<p>Questi strumenti, nati per i sorgenti dei programmi per computer, possono essere utilizzati in tanti altri campi:
+anni fa scrissi una <a class="reference external" href="http://www.trainsimhobby.net/forum/viewtopic.php?f=27&amp;t=11691">guida su come utilizzarli per creare contenuti per un simulatore ferroviario</a>
+in cui gran parte dei files erano testo.</p>
+<p>Possono essere utilizzati anche con files binari, ma perdono alcune funzioni applicabili solo ai testi.</p>
+<p>Utilizzeremo <code class="docutils literal"><span class="pre">Git</span></code> che ci facilita l&#8217;integrazione con un <a class="reference external" href="https://github.com/">sito per la condivisione</a>
+e la pubblicazione dei
+nostri lavori come vedremo nel <a class="reference internal" href="github.html#github"><span class="std std-ref">prossimo capitolo</span></a> .</p>
+<div class="section" id="installare-git">
+<span id="git-setup"></span><h2>3.1. Installare Git<a class="headerlink" href="#installare-git" title="Link a questa intestazione">¶</a></h2>
+<p>L&#8217;installer del programma per Windows può essere <a class="reference external" href="https://git-scm.com/download/win">scaricato dal sito di Git</a></p>
+<p>L&#8217;installer propone diversi pannelli con delle opzioni: per l&#8217;uso normale quelle di default vanno benissimo.</p>
+</div>
+<div class="section" id="creare-un-repository">
+<span id="git-repository-create"></span><h2>3.2. Creare un repository<a class="headerlink" href="#creare-un-repository" title="Link a questa intestazione">¶</a></h2>
+<p>Il repository è una struttura di file (gestita da Git) dove vengono archiviate tutte le modifiche ai file.</p>
+<div class="section" id="il-file-gitignore">
+<h3>3.2.1. Il file .gitignore<a class="headerlink" href="#il-file-gitignore" title="Link a questa intestazione">¶</a></h3>
+<p>Per impostazione predefinita vengono inclusi nel repository tutti i files e le sottocartelle della directory
+che vogliamo gestire.</p>
+<p>Abbiamo visto nel capito precedente che viene creata una cartella <code class="docutils literal"><span class="pre">_build</span></code> nella quale sono salvati i
+risultati delle elaborazioni e che non ci interessa includere nel repository. Per gestire queste eccezioni
+si può creare un file <code class="docutils literal"><span class="pre">.gitignore</span></code> che contenga la lista dei file e cartelle da escludere.</p>
+<p>Questo è il file presente in questo progetto:</p>
+<div class="literal-block-wrapper docutils container" id="rest-code-gitignore">
+<div class="code-block-caption"><span class="caption-text">.gitignore</span><a class="headerlink" href="#rest-code-gitignore" title="Link a questo codice">¶</a></div>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># exclude build dir</span>
+<span class="n">_build</span><span class="o">/</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="attivare-il-repository">
+<h3>3.2.2. Attivare il repository<a class="headerlink" href="#attivare-il-repository" title="Link a questa intestazione">¶</a></h3>
+<p>Clicchiamo con il tasto destro del mouse sulla cartella contenente il nostro progetto e dal menù
+che appare selezioniamo <code class="docutils literal"><span class="pre">Git</span> <span class="pre">GUI</span> <span class="pre">here</span></code></p>
+<img alt="_images/new_repository.jpg" src="_images/new_repository.jpg" />
+<p>Dalla finestra riportata sopra selezioniamo <code class="docutils literal"><span class="pre">Create</span> <span class="pre">New</span> <span class="pre">Repository</span></code></p>
+<img alt="_images/repository_dir.jpg" src="_images/repository_dir.jpg" />
+<p>Indichiamo la cartella del nostro progetto (possiamo anche selezionarla con il pulsante <code class="docutils literal"><span class="pre">Browse</span></code>)
+e quindi clicchiamo su <code class="docutils literal"><span class="pre">Create</span></code>.</p>
+</div>
+<div class="section" id="il-primo-commit">
+<h3>3.2.3. Il primo commit<a class="headerlink" href="#il-primo-commit" title="Link a questa intestazione">¶</a></h3>
+<p>Il sistema ci presenterà questa nuova formati</p>
+<img alt="_images/first_commit.jpg" src="_images/first_commit.jpg" />
+<p>nella quale elencherà i files presenti nella nostra cartella permettendoci di inserirli nel repository.</p>
+<p>Avendo già impostato le esclusioni possiamo inserirli tutti cliccando sul pulsante <code class="docutils literal"><span class="pre">Stage</span> <span class="pre">changed</span></code>.
+I files passeranno nel box sotto:</p>
+<img alt="_images/staged.jpg" src="_images/staged.jpg" />
+<p>Per completare l&#8217;operazione di inserimento descriviamo i cambiamenti fatti nel box in basso a destra;
+essendo questo il primo commit scriviamolo come nell&#8217;esempio.</p>
+<p>Non ci resta che premere il pulsante <code class="docutils literal"><span class="pre">Commit</span></code> ed il gioco è fatto.</p>
+<p>Molto probabilmente vi apparirà questa segnalazione:</p>
+<img alt="_images/cr_warning.jpg" src="_images/cr_warning.jpg" />
+<p>che possiamo tranquillamente ignorare cliccando su <code class="docutils literal"><span class="pre">Continue</span></code> (è dovuta alla diversa gestione del
+<em>fine riga</em> tra le macchine Windows e Unix: Git utilizza il metodo di quest&#8217;ultimo e ci segnala che
+effettua una conversione per noi totalmente ininfluente)</p>
+</div>
+</div>
+<div class="section" id="utilizzare-il-repository">
+<h2>3.3. Utilizzare il repository<a class="headerlink" href="#utilizzare-il-repository" title="Link a questa intestazione">¶</a></h2>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="github.html" class="btn btn-neutral float-right" title="4. Condividere i sorgenti" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="rest-write.html" class="btn btn-neutral" title="2. Scrivere il testo" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017 Roberto Ceccarelli - The Strawberry Field.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0.1 draft',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="_static/translations.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
