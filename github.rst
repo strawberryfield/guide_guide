@@ -112,5 +112,20 @@ E' buona norma includere nei progetti ospitati su GitHub due file: il *readme* e
 README.md
 ---------
 
+In questo file dovrebbero essere presenti una breve presentazione del progetto ed eventuali note per chi 
+si appresti a ricompilare o modificare i file del repository.
+
+Quello che segue è il readme di questo progetto.
+
+.. literalinclude:: README.md
+    :language: md
+    :caption: README.md
+    :name: github-code-readme-md
+
+Come potete notare anche qui viene utilizzato un linguaggio di markup molto simile al ``ReStructuredText`` 
+che stiamo utilizzando per la guida: si chiama ``Markdown``.
+
+
+
 LICENSE.txt
 -----------
