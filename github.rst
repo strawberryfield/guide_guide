@@ -107,6 +107,7 @@ Da remoto a locale
 I file di servizio
 ==================
 
+E' buona norma includere nei progetti ospitati su GitHub due file: il *readme* e la licenza. 
 
 README.md
 ---------

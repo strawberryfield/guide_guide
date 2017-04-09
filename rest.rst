@@ -1,8 +1,8 @@
 .. _rest:
 
-*******************************
-Redigere ed impaginare il testo
-*******************************
+***********
+Il progetto
+***********
 
 Per realizzare la nostra guida utilizzeremo dei tools che gestiscono un linguaggio di markup
 denominato `ReStructuredText <http://docutils.sourceforge.net/rst.html>`_ 
@@ -89,8 +89,7 @@ Nel prompt comandi scriviamo::
 	
 A cui seguirà il dialogo riportato di seguito
 
-.. literalinclude:: sphinx-quickstart.txt
-    :language: rest
+.. literalinclude:: samples/sphinx-quickstart.txt
     :caption: sphinx-quickstart
     :name: rest-code-sphinx-quickstart
 
@@ -105,6 +104,38 @@ attenzione su due di loro.
 Il file di configurazione
 -------------------------
 
+Questo file contiene tutte le impostazioni che regolano il *rendering* della nostra guida sulle varie piattaforme.
+Non lo analizzeremo tutto, ma solo le parti su cui è necessario intervenire per ottenere lo stile con cui è stata 
+compilata questa guida.
+
+.. literalinclude:: samples/config-py-begin.txt
+    :language: python
+    :caption: config.py - preambolo
+    :name: rest-code-config-py-begin
+
+Nelle opzioni generali dobbiamo controllare
+
+.. literalinclude:: samples/config-py-general.txt
+    :language: python
+    :caption: config.py - parametri generali
+    :name: rest-code-config-py-general
+
+Nella sezione HTML
+
+.. literalinclude:: samples/config-py-html.txt
+    :language: python
+    :caption: config.py - HTML
+    :name: rest-code-config-py-html
+
+Nella sezione LaTeX
+
+.. literalinclude:: samples/config-py-latex.txt
+    :language: python
+    :caption: config.py - LaTeX
+    :name: rest-code-config-py-latex
+
+	
+.. _rest-startup-index-rst:
 
 Il file index
 -------------

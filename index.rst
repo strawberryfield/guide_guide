@@ -13,6 +13,7 @@ Una guida per creare guide
     :caption: Sommario
 
     rest
+    rest-write
     git
     github
     github-site
