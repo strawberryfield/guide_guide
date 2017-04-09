@@ -95,6 +95,8 @@
 <li class="toctree-l1"><a class="reference internal" href="github.html">4. Condividere i sorgenti</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">5. Pubblicare la guida</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#il-sito-per-la-documentazione-del-progetto">5.1. Il sito per la documentazione del progetto</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#aggiungere-i-download-di-altre-versioni">5.2. Aggiungere i download di altre versioni</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#automatizzare-il-processo">5.3. Automatizzare il processo</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="biblio.html">6. Bibliografia</a></li>
@@ -151,6 +153,111 @@ noi utilizzeremo quest&#8217;ultimo per riversarci dentro le pagine HTML della n
 che possa essere letta comodamente online.</p>
 <div class="section" id="il-sito-per-la-documentazione-del-progetto">
 <span id="github-site-create"></span><h2>5.1. Il sito per la documentazione del progetto<a class="headerlink" href="#il-sito-per-la-documentazione-del-progetto" title="Link a questa intestazione">¶</a></h2>
+<p>Il sito di documentazione è ospitato all&#8217;interno del nostro repository nella cartella <code class="docutils literal"><span class="pre">docs</span></code> che quindi dovremo creare nella
+nostra cartella di lavoro. Dalla console scrivete:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">mkdir</span> <span class="n">docs</span>
+</pre></div>
+</div>
+<p>poi rigeneriamo la guida in HTML:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">make</span> <span class="n">clean</span>
+<span class="n">make</span> <span class="n">html</span>
+</pre></div>
+</div>
+<p>quindi copiamo il sito generato nella cartella <code class="docutils literal"><span class="pre">docs</span></code>:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">xcopy</span> <span class="n">_build</span>\<span class="n">html</span> <span class="n">docs</span>  <span class="o">/</span><span class="n">S</span> <span class="o">/</span><span class="n">Y</span>
+</pre></div>
+</div>
+<p>infine aggiungiamo i files al repository locale e sincronizziamo con GitHub:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">add</span> <span class="o">.</span>
+<span class="n">git</span> <span class="n">commit</span> <span class="o">-</span><span class="n">m</span> <span class="s2">&quot;Importazione iniziale sito&quot;</span>
+<span class="n">git</span> <span class="n">push</span> <span class="n">guide_guide</span> <span class="n">master</span>
+</pre></div>
+</div>
+<p>Fatte queste operazioni nel repository su GitHub sarà presente la nostra guida compilata in HTML all&#8217;interno
+della cartella docs</p>
+<img alt="_images/docs.jpg" src="_images/docs.jpg" />
+<p>Possiamo quindi procedere all&#8217;abilitazione del sito.</p>
+<p>Andiamo quindi nella sezione <code class="docutils literal"><span class="pre">Settings</span></code> del nostro repository su GitHub ed in fondo alla pagina delle <code class="docutils literal"><span class="pre">Options</span></code>
+troveremo la voce per abilitare le <code class="docutils literal"><span class="pre">GitHub</span> <span class="pre">Pages</span></code>:</p>
+<img alt="_images/pages.jpg" src="_images/pages.jpg" />
+<p>Scegliamo l&#8217;opzione <code class="docutils literal"><span class="pre">master</span> <span class="pre">branch</span> <span class="pre">/docs</span> <span class="pre">folder</span></code> e salviamo.</p>
+<p>Il sistema ci comunica dove troveremo le nostre pagine pubblicate</p>
+<img alt="_images/pages-url.jpg" src="_images/pages-url.jpg" />
+<p>Nel caso di questa guida l&#8217;URL è <a class="reference external" href="https://strawberryfield.github.io/guide_guide/">https://strawberryfield.github.io/guide_guide/</a></p>
+</div>
+<div class="section" id="aggiungere-i-download-di-altre-versioni">
+<span id="github-site-binaries"></span><h2>5.2. Aggiungere i download di altre versioni<a class="headerlink" href="#aggiungere-i-download-di-altre-versioni" title="Link a questa intestazione">¶</a></h2>
+<p>Poichè il sistema ci permette di avere differenti tipi di output è buona cosa rendere disponibili
+all&#8217;utente finale (che non è in grado di ricompilarsi la guida) almeno il PDF. Io pubblico anche l&#8217;ebook in formato .epub,
+ma ognuno è libero di scegliere i formati che ritiene più utili.</p>
+<p>Per fare ciò creiamo una cartella <code class="docutils literal"><span class="pre">bin</span></code> all&#8217;interno di <code class="docutils literal"><span class="pre">docs</span></code> nella quale andremo a copiare i file .pdf e .epub
+che abbiamo preventivamente compilato.</p>
+<p>E&#8217; anche utile aggiungere un capitolo (o sezione) nel quale linkare tutti possibili file da scaricare come ad esempio questo:</p>
+<div class="literal-block-wrapper docutils container" id="github-site-code-download-rst">
+<div class="code-block-caption"><span class="caption-text">download.rst</span><a class="headerlink" href="#github-site-code-download-rst" title="Link a questo codice">¶</a></div>
+<div class="highlight-rest"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="nt">_downloads:</span>
+
+<span class="gh">**************************</span>
+<span class="gh">Download sorgenti e binari</span>
+<span class="gh">**************************</span>
+
+<span class="p">..</span> <span class="nt">_downloads-bin:</span>
+
+<span class="gh">Versioni compilate</span>
+<span class="gh">==================</span>
+
+<span class="s">`La guida può essere letta on line a questo link </span><span class="si">&lt;https://strawberryfield.github.io/guide_guide/&gt;</span><span class="s">`_</span>,
+
+<span class="s">`oppure potete scaricare il pdf </span><span class="si">&lt;https://strawberryfield.github.io/guide_guide/bin/guide_guide.pdf&gt;</span><span class="s">`_</span>,
+
+<span class="s">`o l&#39;e-book </span><span class="si">&lt;https://strawberryfield.github.io/guide_guide/bin/MSTSORTerrainGuide.epub&gt;</span><span class="s">`_</span>.
+
+<span class="p">..</span> <span class="nt">_downloads-src:</span>
+
+<span class="gh">Sorgenti</span>
+<span class="gh">========</span>
+
+<span class="s">`Per chi fosse interessato i sorgenti sono disponibili su GitHub </span><span class="si">&lt;https://github.com/strawberryfield/guide_guide&gt;</span><span class="s">`_</span>.
+
+
+
+</pre></div>
+</div>
+</div>
+<p>che è quello di questa guida (non dimenticate di inserirlo nel file <code class="docutils literal"><span class="pre">index.rst</span></code>).</p>
+</div>
+<div class="section" id="automatizzare-il-processo">
+<span id="github-site-automate"></span><h2>5.3. Automatizzare il processo<a class="headerlink" href="#automatizzare-il-processo" title="Link a questa intestazione">¶</a></h2>
+<p>Ripetere tutte le volte la procedura di ricompilazione, copia e commit del sito è cosa piuttosto noiosa
+e fonte di errori. Ho perciò predisposto un piccolo batch che automatizza il processo.</p>
+<div class="literal-block-wrapper docutils container" id="github-site-code-makesite-bat">
+<div class="code-block-caption"><span class="caption-text">makesite.bat</span><a class="headerlink" href="#github-site-code-makesite-bat" title="Link a questo codice">¶</a></div>
+<div class="highlight-bat"><div class="highlight"><pre><span></span><span class="p">@</span><span class="k">echo</span> off
+
+<span class="c1">REM script for building website to host on github</span>
+
+<span class="k">set</span> <span class="nv">builddir</span><span class="p">=</span>_build
+<span class="k">set</span> <span class="nv">site</span><span class="p">=</span>docs
+<span class="k">set</span> <span class="nv">downloads</span><span class="p">=</span><span class="nv">%site%</span>\bin
+
+<span class="k">call</span> make.bat clean
+<span class="k">call</span> make.bat html
+xcopy <span class="nv">%builddir%</span>\html <span class="nv">%site%</span>  /S /Y 
+
+<span class="k">call</span> make.bat latexpdf
+<span class="k">copy</span> /Y <span class="nv">%builddir%</span>\latex\*.pdf <span class="nv">%downloads%</span>
+
+<span class="k">call</span> make.bat epub
+<span class="k">copy</span> /Y <span class="nv">%builddir%</span>\epub\*.epub <span class="nv">%downloads%</span>
+
+git add .
+git commit -m <span class="s2">&quot;Aggiornamento automatico sito&quot;</span>
+git push guide_guide master
+</pre></div>
+</div>
+</div>
+<p>Prima di lanciare questo batch è oppurtuno fare il commit dei sorgenti in modo da tenere separato l&#8217;aggiornamento del sito
+dalle modifiche alla guida. Non è una cosa obbligatoria, ma aiuta a tenere le cose in ordine.</p>
 </div>
 </div>
 
