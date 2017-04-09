@@ -96,6 +96,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#capitoli-e-sezioni">2.3. Capitoli e Sezioni</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#link">2.4. Link</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#blocchi-di-codice">2.5. Blocchi di codice</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#compilare-la-guida">2.6. Compilare la guida</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="git.html">3. Gestire modifiche e versioni</a></li>
@@ -168,6 +169,30 @@ vedremo proprio questo aspetto.</p>
 </div>
 <div class="section" id="blocchi-di-codice">
 <h2>2.5. Blocchi di codice<a class="headerlink" href="#blocchi-di-codice" title="Link a questa intestazione">¶</a></h2>
+</div>
+<div class="section" id="compilare-la-guida">
+<h2>2.6. Compilare la guida<a class="headerlink" href="#compilare-la-guida" title="Link a questa intestazione">¶</a></h2>
+<p>Nella directory principale del progetto apriamo il prompt comandi e scriviamo:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">make</span> <span class="n">html</span>
+</pre></div>
+</div>
+<p>verrà generato il sito web nella cartella <code class="docutils literal"><span class="pre">_build\html</span></code> (avviare <code class="docutils literal"><span class="pre">index.html</span></code> per consultarlo)</p>
+<p>Con il comando:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">make</span> <span class="n">latexpdf</span>
+</pre></div>
+</div>
+<p>verrà generato il file PDF nella cartella <code class="docutils literal"><span class="pre">_build\latex</span></code></p>
+<p>Con il comando:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">make</span> <span class="n">epub</span>
+</pre></div>
+</div>
+<p>verrà generato un ebook in formato epub nella cartella <code class="docutils literal"><span class="pre">_build\epub</span></code></p>
+<p>Infine il comando:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">make</span> <span class="n">clean</span>
+</pre></div>
+</div>
+<p>pulirà completamente la cartella <code class="docutils literal"><span class="pre">_build</span></code>
+(utile in caso di modifiche per evitare che restino vecchi files inutili)</p>
 </div>
 </div>
 

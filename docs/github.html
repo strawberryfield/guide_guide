@@ -238,6 +238,73 @@ che ci sono tutti i nostri file</p>
 <p>E&#8217; buona norma includere nei progetti ospitati su GitHub due file: il <em>readme</em> e la licenza.</p>
 <div class="section" id="readme-md">
 <h3>4.4.1. README.md<a class="headerlink" href="#readme-md" title="Link a questa intestazione">¶</a></h3>
+<p>In questo file dovrebbero essere presenti una breve presentazione del progetto ed eventuali note per chi
+si appresti a ricompilare o modificare i file del repository.</p>
+<p>Quello che segue è il readme di questo progetto.</p>
+<div class="literal-block-wrapper docutils container" id="github-code-readme-md">
+<div class="code-block-caption"><span class="caption-text">README.md</span><a class="headerlink" href="#github-code-readme-md" title="Link a questo codice">¶</a></div>
+<div class="highlight-md"><div class="highlight"><pre><span></span><span class="gh">#</span> guide_guide
+<span class="gu">##</span> Guida per scrivere una guida
+
+Come redigere della documentazione producendo output in diversi formati (HTML, PDF, epub...),
+gestire le versioni dei file sorgente, condividerli e creare un sito web per pubblicarli.
+
+La guida è distribuita in formato sorgente <span class="ge">*ReStructuredText*</span>, 
+ma nella directory <span class="sb">`docs`</span> è presente il sito html compilato
+e nella cartella <span class="sb">`docs\bin`</span> le versioni in PDF ed EPUB.
+
+<span class="gu">##</span> Compilazione dei sorgenti
+
+Per chi volesse compilare da se i sorgenti riporto alcune note desunte da questa stessa guida consultabile qui: https://strawberryfield.github.io/guide_guide/index.html
+
+<span class="gu">###</span> Installare *Sphinx* e *MikTex*
+
+Per compilare correttamente i sorgenti è necessario disporre di <span class="gs">**Python**</span> (https://www.python.org/)
+e <span class="gs">**Sphinx-Build**</span> (http://www.sphinx-doc.org/en/stable/install.html)
+
+Per ottenere il file PDF è necessario anche un interprete LaTeX; in Windows si può utilizzare <span class="gs">**MikTex**</span> (https://miktex.org/howto/install-miktex) 
+
+L&#39;installazione dell&#39;ambiente software necessario è descritta in https://strawberryfield.github.io/guide_guide/rest.html#installare-il-software-necessario
+
+<span class="gu">###</span> Compilare la guida
+
+Nella directory principale del progetto aprire il prompt comandi e scrivere
+
+    make html
+	
+verrà generato il sito web nella cartella <span class="sb">`_build\html`</span> (avviare <span class="sb">`index.html`</span>)
+
+Con il comando
+
+    make latexpdf
+	
+verrà generato il file PDF nella cartella <span class="sb">`_build\latex`</span>
+
+Con il comando 
+
+    make epub
+	
+verrà generato un ebook in formato epub nella cartella <span class="sb">`_build\epub`</span>
+
+Infine il comando
+
+    make clean
+	
+pulirà completamente la cartella <span class="sb">`_build`</span> 
+(utile in caso di modifiche per evitare che restino vecchi files inutili)
+
+<span class="gu">##</span> Licenza
+
+copyright (c) 2017 Roberto Ceccarelli - The Strawberry Field.
+
+Quest&#39;opera è stata rilasciata con licenza Creative Commons Attribuzione - Non commerciale - Condividi allo stesso modo 4.0 Internazionale. 
+
+Per leggere una copia della licenza visita il sito web http://creativecommons.org/licenses/by-nc-sa/4.0/ o spedisci una lettera a Creative Commons, PO Box 1866, Mountain View, CA 94042, USA.
+</pre></div>
+</div>
+</div>
+<p>Come potete notare anche qui viene utilizzato un linguaggio di markup molto simile al <code class="docutils literal"><span class="pre">ReStructuredText</span></code>
+che stiamo utilizzando per la guida: si chiama <code class="docutils literal"><span class="pre">Markdown</span></code>.</p>
 </div>
 <div class="section" id="license-txt">
 <h3>4.4.2. LICENSE.txt<a class="headerlink" href="#license-txt" title="Link a questa intestazione">¶</a></h3>
